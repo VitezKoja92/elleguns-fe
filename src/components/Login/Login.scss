@@ -1,0 +1,59 @@
+@import "../../styles/styles";
+
+.Login {
+  width: 50%;
+
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        color: $color-gray-10;
+        font-size: $font-size-14;
+        margin: 20px 10px 5px;
+      }
+
+      .input {
+        border: 2px solid $color-gray-10;
+        border-radius: 20px;
+        color: $color-gray-20 !important;
+        font-size: $font-size-12;
+        margin-bottom: 5px;
+        outline: none;
+        padding: 10px;
+
+        &:focus {
+          box-shadow: 0 0 4px 0 $color-gray-10;
+        }
+
+        &.error {
+          color: $color-error !important;
+          border-color: $color-error;
+
+          &:focus {
+            box-shadow: 0 0 4px 0 $color-error;
+          }
+        }
+      }
+
+      .input-feedback {
+        color: $color-error;
+        font-size: $font-size-12;
+        margin-left: 10px;
+      }
+
+      .button-wrapper {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+}

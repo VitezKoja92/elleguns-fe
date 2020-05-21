@@ -1,0 +1,29 @@
+@import "./styles/styles.scss";
+
+.App {
+  height: 100%;
+  text-align: center;
+
+  .footer,
+  .header {
+    background-color: $color-black;
+    color: $color-white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+  }
+
+  .footer {
+    bottom: 0;
+  }
+
+  .header {
+    top: 0;
+  }
+}

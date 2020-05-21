@@ -1,0 +1,19 @@
+@import "../../../styles/styles.scss";
+
+.text-button-wrapper {
+  padding: 5px;
+
+  .link {
+    color: $color-white;
+    cursor: pointer;
+  }
+
+  .button {
+    cursor: pointer;
+
+    &.active {
+      color: $color-orange;
+      text-decoration: underline;
+    }
+  }
+}
