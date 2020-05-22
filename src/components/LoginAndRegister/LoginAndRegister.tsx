@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Credentials } from "../../types/login.types";
-import "./Login.scss";
+import "./LoginAndRegister.scss";
 import { Formik } from "formik";
 import * as yup from "yup";
 import Button from "../UI/Button/Button";
 import { ButtonColor } from "../../enums/button-color.enum";
 import { ButtonType } from "../../enums/button-type.enum";
+import { ActiveEntranceView } from "../../enums/acive-entrance-view.enum";
 
-function Login() {
+function LoginAndRegister() {
+  const [activeEntranceView, setActiveEntranceView] = useState(
+    ActiveEntranceView.Login
+  );
+
+  const toggleActiveEntranceView = () => {
+    setActiveEntranceView(
+      activeEntranceView === ActiveEntranceView.Login
+        ? ActiveEntranceView.Register
+        : ActiveEntranceView.Login
+    );
+  };
+
   const onFormSubmitHandler = (values: Credentials, { setSubmitting }: any) => {
     console.log("values in onFormSubmit: ", values);
 
@@ -17,7 +30,7 @@ function Login() {
   };
 
   return (
-    <div className="Login">
+    <div className="LoginAndRegister">
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={onFormSubmitHandler}
@@ -45,7 +58,7 @@ function Login() {
           } = props;
 
           return (
-            <div className="login-wrapper">
+            <div className="login-and-register-wrapper">
               <form onSubmit={handleSubmit} className="form">
                 <label htmlFor="email" className="label">
                   Email:
@@ -53,7 +66,11 @@ function Login() {
                 <input
                   type="text"
                   name="email"
-                  placeholder="Your E-Mail"
+                  placeholder={
+                    activeEntranceView === ActiveEntranceView.Login
+                      ? "Your E-Mail"
+                      : "E-mail"
+                  }
                   value={values.email}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -70,7 +87,11 @@ function Login() {
                 <input
                   type="password"
                   name="password"
-                  placeholder="Your Password"
+                  placeholder={
+                    activeEntranceView === ActiveEntranceView.Login
+                      ? "Your Password"
+                      : "Password"
+                  }
                   value={values.password}
                   onChange={handleChange}
                   onBlur={handleBlur}
@@ -84,18 +105,23 @@ function Login() {
 
                 <div className="button-wrapper">
                   <Button
-                    text="Register"
+                    text={
+                      activeEntranceView === ActiveEntranceView.Login
+                        ? "Go to Register"
+                        : "Go to Login"
+                    }
                     type={ButtonType.StrokedRounded}
                     color={ButtonColor.Black}
                     width="40%"
-                    disabled={
-                      isSubmitting ||
-                      Boolean(errors.password) ||
-                      Boolean(errors.email)
-                    }
+                    click={toggleActiveEntranceView}
+                    disabled={isSubmitting}
                   />
                   <Button
-                    text="Login"
+                    text={
+                      activeEntranceView === ActiveEntranceView.Login
+                        ? "Login"
+                        : "Register"
+                    }
                     type={ButtonType.RaisedRounded}
                     color={ButtonColor.Black}
                     width="40%"
@@ -115,4 +141,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default LoginAndRegister;

@@ -18,6 +18,7 @@ function Button(props: ButtonProps) {
     background-color: ${buttonRaised ? `${props.color}` : "white"};
     color: ${buttonRaised ? "white" : `${props.color}`};
     cursor: pointer;
+    outline: none;
     font-size: 16px;
     font-weight: bold;
     margin-top: 20px;
@@ -37,6 +38,7 @@ function Button(props: ButtonProps) {
 
   return (
     <StyledButton
+      onClick={props.click}
       disabled={props.disabled}
       className={`${props.disabled ? "disabled" : ""} ${
         props.additionalClasses ? props.additionalClasses : ""
@@ -52,6 +54,7 @@ export type ButtonProps = {
   color: ButtonColor;
   type: ButtonType;
   disabled: boolean;
+  click?: Function;
   width?: string;
   additionalClasses?: string;
 };
