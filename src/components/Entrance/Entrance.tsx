@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Entrance.scss";
-import Login from "../Login/Login";
+import LoginAndRegister from "../LoginAndRegister/LoginAndRegister";
 import TextButton from "../UI/TextButton/TextButton";
 import { ActiveLanguage } from "../../enums/active-language.enum";
 import DotSeparator from "../UI/DotSeparator/DotSeparator";
@@ -13,7 +13,7 @@ function Entrance() {
     <div className="entrance-wrapper">
       <div className="left">
         <div className="logo-container"></div>
-        <Login />
+        <LoginAndRegister />
         <Footer>
           {/* Add a link to privacy policy */}
           <TextButton linkUrl="#" text="Privacy Policy" />
