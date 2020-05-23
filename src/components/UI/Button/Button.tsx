@@ -6,11 +6,11 @@ import styled from "styled-components";
 
 function Button(props: ButtonProps) {
   const buttonRaised =
-    props.type === ButtonType.RaisedNotRounded ||
-    props.type === ButtonType.RaisedRounded;
+    props.buttonType === ButtonType.RaisedNotRounded ||
+    props.buttonType === ButtonType.RaisedRounded;
   const buttonRounded =
-    props.type === ButtonType.RaisedRounded ||
-    props.type === ButtonType.StrokedRounded;
+    props.buttonType === ButtonType.RaisedRounded ||
+    props.buttonType === ButtonType.StrokedRounded;
 
   const StyledButton = styled.button`
     border: ${buttonRaised ? `none` : `2px solid ${props.color}`};
@@ -52,7 +52,7 @@ function Button(props: ButtonProps) {
 export type ButtonProps = {
   text: string;
   color: ButtonColor;
-  type: ButtonType;
+  buttonType: ButtonType;
   disabled: boolean;
   click?: Function;
   width?: string;

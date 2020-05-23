@@ -110,7 +110,7 @@ function LoginAndRegister() {
                         ? "Go to Register"
                         : "Go to Login"
                     }
-                    type={ButtonType.StrokedRounded}
+                    buttonType={ButtonType.StrokedRounded}
                     color={ButtonColor.Black}
                     width="40%"
                     click={toggleActiveEntranceView}
@@ -122,7 +122,7 @@ function LoginAndRegister() {
                         ? "Login"
                         : "Register"
                     }
-                    type={ButtonType.RaisedRounded}
+                    buttonType={ButtonType.RaisedRounded}
                     color={ButtonColor.Black}
                     width="40%"
                     disabled={
