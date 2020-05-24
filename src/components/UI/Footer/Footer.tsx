@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.scss";
 
 function Footer(props: FooterProps) {
-  return <div className="footer">{props.children}</div>;
+  return <div className="Footer">{props.children}</div>;
 }
 
 export type FooterProps = {

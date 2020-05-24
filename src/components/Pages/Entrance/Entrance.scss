@@ -1,0 +1,27 @@
+@import "../../../styles/styles.scss";
+
+.Entrance {
+  @include display-flex-row;
+  height: 100%;
+  width: 100%;
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+
+    .logo-container {
+      background: white url(../../../photos/logo.png) center/cover no-repeat;
+      position: absolute;
+      top: 70px;
+      width: 250px;
+      height: 150px;
+    }
+  }
+
+  .right {
+    width: 50%;
+    background: white url(../../../photos/monica.jpg) center/cover no-repeat;
+  }
+}

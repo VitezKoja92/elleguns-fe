@@ -1,0 +1,52 @@
+@import "../../../styles/styles.scss";
+
+.ProductCard {
+  @include display-flex-column;
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid $color-black;
+  margin: 20px;
+  height: 400px;
+  width: 300px;
+  justify-content: flex-end;
+
+  .image {
+    @include border-top-radius-10;
+    width: 100%;
+    height: 100%;
+  }
+
+  .sale-percentage {
+    padding: 5px;
+    font-size: $font-size-16;
+    color: $color-error;
+    border-radius: 5px;
+    border: 2px solid $color-error;
+
+    position: absolute;
+    top: 5px;
+    right: 5px;
+  }
+
+  .card-description {
+    @include display-flex-column;
+    @include border-bottom-radius-10;
+    background: rgba(51, 51, 58, 0.1);
+    height: 60px;
+
+    .features-wrapper {
+    }
+
+    .new-price {
+      font-size: $font-size-14;
+      color: $color-black;
+      font-weight: bold;
+    }
+
+    .old-price {
+      font-size: $font-size-12;
+      color: $color-gray-20;
+      text-decoration: line-through;
+    }
+  }
+}

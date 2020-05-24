@@ -1,0 +1,26 @@
+@import "../../../styles/styles.scss";
+
+.PageContent {
+  @include display-flex-column;
+  align-items: center;
+  margin: $header-height 0 $footer-height $sidebar-width;
+  padding: 20px;
+
+  .title {
+    margin-bottom: 20px;
+  }
+
+  .description {
+    margin-bottom: 20px;
+  }
+
+  .content {
+    @include display-flex-row;
+    border-top: 1px solid $color-orange;
+    border-bottom: 1px solid $color-orange;
+    padding: 20px;
+
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
