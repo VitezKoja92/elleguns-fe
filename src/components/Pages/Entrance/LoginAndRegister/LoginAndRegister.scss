@@ -1,17 +1,15 @@
-@import "../../styles/styles";
+@import "../../../../styles/styles.scss";
 
 .LoginAndRegister {
   width: 50%;
 
   .login-and-register-wrapper {
-    display: flex;
-    flex-direction: column;
+    @include display-flex-column;
     text-align: left;
     padding: 20px;
 
     .form {
-      display: flex;
-      flex-direction: column;
+      @include display-flex-column;
 
       .label {
         color: $color-gray-10;
@@ -49,9 +47,8 @@
       }
 
       .button-wrapper {
+        @include display-flex-row;
         align-items: center;
-        display: flex;
-        flex-direction: row;
         justify-content: space-between;
       }
     }

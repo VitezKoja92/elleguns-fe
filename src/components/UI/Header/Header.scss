@@ -1,6 +1,6 @@
 @import "../../../styles/styles.scss";
 
-.Footer {
+.Header {
   background-color: $color-black;
   color: $color-white;
 
@@ -13,12 +13,6 @@
   position: sticky;
   left: 0;
   right: 0;
-  bottom: 0;
+  top: 0;
   z-index: 1;
-
-  .language-wrapper {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-  }
 }

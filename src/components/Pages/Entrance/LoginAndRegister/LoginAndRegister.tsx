@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import { Credentials } from "../../types/login.types";
+import { useHistory } from "react-router-dom";
+import { Credentials } from "../../../../types/login.types";
 import "./LoginAndRegister.scss";
 import { Formik } from "formik";
 import * as yup from "yup";
-import Button from "../UI/Button/Button";
-import { ButtonColor } from "../../enums/button-color.enum";
-import { ButtonType } from "../../enums/button-type.enum";
-import { ActiveEntranceView } from "../../enums/acive-entrance-view.enum";
+import Button from "../../../UI/Button/Button";
+import { ButtonColor } from "../../../../enums/button-color.enum";
+import { ButtonType } from "../../../../enums/button-type.enum";
+import { ActiveEntranceView } from "../../../../enums/acive-entrance-view.enum";
 
 function LoginAndRegister() {
   const [activeEntranceView, setActiveEntranceView] = useState(
     ActiveEntranceView.Login
   );
+  const history = useHistory();
 
   const toggleActiveEntranceView = () => {
     setActiveEntranceView(
@@ -21,12 +23,16 @@ function LoginAndRegister() {
     );
   };
 
-  const onFormSubmitHandler = (values: Credentials, { setSubmitting }: any) => {
-    console.log("values in onFormSubmit: ", values);
+  const onFormSubmitHandler = (
+    credentials: Credentials,
+    { setSubmitting }: any
+  ) => {
+    console.log("values in onFormSubmit: ", credentials);
 
-    if (null) {
-      setSubmitting();
-    }
+    setSubmitting();
+    console.log("history: ", history);
+    history.push("/dashboard", credentials);
+    console.log("history: ", history);
   };
 
   return (
